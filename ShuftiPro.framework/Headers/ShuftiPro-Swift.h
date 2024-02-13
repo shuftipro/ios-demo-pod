@@ -439,6 +439,7 @@ SWIFT_CLASS("_TtC9ShuftiPro9CameraVc2")
 - (void)didReceiveMemoryWarning;
 - (void)applicationWillEnterForeground;
 - (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)autofocusContineusly;
 - (IBAction)uploadPassportBtnPressedWithSender:(UIButton * _Nonnull)sender;
 - (IBAction)backBtnPressedOnCamera:(id _Nonnull)sender;
 - (IBAction)cancelBtnPressed:(id _Nonnull)sender;
@@ -452,7 +453,6 @@ SWIFT_CLASS("_TtC9ShuftiPro9CameraVc2")
 - (void)cameraErrorMessageWithCamErrMsg:(NSString * _Nonnull)camErrMsg;
 - (void)switchCamera;
 - (void)timerChangeautoCountdown;
-- (void)autofocusContineusly;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
