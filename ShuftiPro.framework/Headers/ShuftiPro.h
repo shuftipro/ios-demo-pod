@@ -1,5 +1,10 @@
+//
+//  ShuftiPro.h
+//  ShuftiPro
+//
 
-#import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
 
 //! Project version number for ShuftiPro.
 FOUNDATION_EXPORT double ShuftiProVersionNumber;
