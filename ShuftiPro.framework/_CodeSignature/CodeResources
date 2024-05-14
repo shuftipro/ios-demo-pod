@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		icTefRXBCQrXA47hnAEvLXXrQ6c=
+		GzBmvtecZF/jpI3e9SODWpZbU4Y=
 		</data>
 		<key>CameraInstruction.storyboardc/CameraInstructionViewController.nib</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/ShuftiPro.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		ym5DzOVnkXa9cNu0fKerUE72mmY=
+		n7Ydu3fcgsmoxiN6f346+bSk0X8=
 		</data>
 		<key>Modules/ShuftiPro.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Modules/ShuftiPro.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		5BA68FoDYJ9QYSPkYXmfWvMjUbc=
+		RKpomGWx/96AR3NybzO8hvDBYwI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -463,7 +463,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yIHptpdLCMaKyF8esKP1W/mMErb1TLA52RUYzW/VYss=
+			UiC2rHNN/8rPzFYMLFkJRxYLDrL8llFYmNf0lMrvWnM=
 			</data>
 		</dict>
 		<key>CameraInstruction.storyboardc/CameraInstructionViewController.nib</key>
@@ -638,7 +638,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sb1rUNQ9yNz6ndy1zM3aF8DcdPL4RnbkuEO8boFpDIo=
+			Bbavk03p9MO3bwg2ApUs5Fypi/8qXz83ZJgGS/JeFak=
 			</data>
 		</dict>
 		<key>Modules/ShuftiPro.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -659,7 +659,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bcy8lolwEjSgvBMyAOiDwKJOIJa7rR5AX0kAcPHB0/w=
+			QOoCACvg0fd6e+sRw/DYR81sUa1gxp8raguNxFpUluE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
