@@ -580,6 +580,7 @@ SWIFT_CLASS("_TtC9ShuftiPro12DropDownCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @class UIScrollView;
 @class UIButton;
 
@@ -623,6 +624,23 @@ SWIFT_CLASS("_TtC9ShuftiPro13LoadingButton")
 @end
 
 
+SWIFT_CLASS("_TtC9ShuftiPro25NFCDataCollectionViewCell")
+@interface NFCDataCollectionViewCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified NFCDataTavleView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified cellViewWidth;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified cellViewHeight;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface NFCDataCollectionViewCell (SWIFT_EXTENSION(ShuftiPro)) <UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC9ShuftiPro18NFCDetailTableCell")
 @interface NFCDetailTableCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nfcDetailHeading;
@@ -634,13 +652,150 @@ SWIFT_CLASS("_TtC9ShuftiPro18NFCDetailTableCell")
 @end
 
 
-SWIFT_CLASS("_TtC9ShuftiPro17NFCImageTableCell")
-@interface NFCImageTableCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified nfcPhoto;
+SWIFT_CLASS("_TtC9ShuftiPro22NFCDetailTableViewCell")
+@interface NFCDetailTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified headinglabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified detaillabel;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified bottomLine;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9ShuftiPro22NFCHeaderTableViewCell")
+@interface NFCHeaderTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sectionLabel;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9ShuftiPro17NFCImageTableCell")
+@interface NFCImageTableCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified nfcPhoto;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified documentNumberLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified documentNumberValueLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified issueAuthorityLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified issueAuthorityValuelabel;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9ShuftiPro27NFCImagesCollectionViewCell")
+@interface NFCImagesCollectionViewCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified cellViewWidth;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified cellViewHeight;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified mainImageView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified faceImageView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified passportImageView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified mainImagePreview;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified passportImagePreview;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified faceimagePreview;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified mainImaageLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified faceImageLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified passportImagelabel;
+- (void)awakeFromNib;
+- (void)passportImageClick;
+- (void)faceImageClick;
+- (void)yoloImageClick;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+
+SWIFT_CLASS("_TtC9ShuftiPro21NFCScanViewController") SWIFT_AVAILABILITY(ios,introduced=13)
+@interface NFCScanViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified topTitle;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified scanLbl;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified passportView;
+@property (nonatomic, weak) IBOutlet LoadingButton * _Null_unspecified continueBtn;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified passportDetailTable;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified pasportIntructionView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified passportInstructionLabel;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified heightForSecondView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified trailingFOrSecondView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leadingForSecondView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified secondViewTop;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified topView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified secondView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified topSpaceForTopView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified topViewHeightConstraint;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified centerterdView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified heightFortheInerView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified arrowIconTopView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified topViewLabel;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified arrowIconCenteredView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified centeredViewLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified instructionsLabel;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified buttonsTopBackView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified imageProofTopView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified imageProofLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified imageProofButton;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified NFCDataTopView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified NFCDataLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified NFCDataButton;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified MRZDataTopView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified MRZDataLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified MRZDataButton;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified tabBarStackView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified backGroundView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified NFCCollectioViewTopView;
+@property (nonatomic, weak) IBOutlet UICollectionView * _Null_unspecified NFCDetailCollectionView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified skipButton;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified animationMainView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified tabbartopView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified seconViewArraow;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified topViewArrow;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)contineuButtonClickAction:(id _Nonnull)sender;
+- (IBAction)skipNFCFlow:(id _Nonnull)sender;
+- (IBAction)imageButtonClickAction:(id _Nonnull)sender;
+- (IBAction)NFCDataClickAction:(id _Nonnull)sender;
+- (IBAction)MRAZDataClickAction:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+
+SWIFT_AVAILABILITY(ios,introduced=13)
+@interface NFCScanViewController (SWIFT_EXTENSION(ShuftiPro)) <UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView willDisplayHeaderView:(UIView * _Nonnull)view forSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface NFCScanViewController (SWIFT_EXTENSION(ShuftiPro)) <UICollectionViewDataSource, UICollectionViewDelegate>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didEndDisplayingCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
+@interface NFCScanViewController (SWIFT_EXTENSION(ShuftiPro))
+- (void)timeChangeenventforAnimate;
+- (void)timeChangeenvent;
+@end
+
+@class NSNotification;
+
+SWIFT_AVAILABILITY(ios,introduced=13)
+@interface NFCScanViewController (SWIFT_EXTENSION(ShuftiPro))
+- (void)playerDidFinishPlaying:(NSNotification * _Nonnull)notification;
 @end
 
 
@@ -743,6 +898,15 @@ SWIFT_CLASS("_TtC9ShuftiPro13OCRFieldModel")
 @interface OCRFieldModel : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS("_TtC9ShuftiPro14PassportReader") SWIFT_AVAILABILITY(ios,introduced=15)
+@interface PassportReader : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 
 
 SWIFT_CLASS("_TtC9ShuftiPro34PersistenPofileHeaderTableViewCell")
@@ -1108,7 +1272,6 @@ SWIFT_CLASS("_TtC9ShuftiPro26SelectCountryTableViewCell")
 @end
 
 @class UISearchBar;
-@class NSNotification;
 
 SWIFT_CLASS("_TtC9ShuftiPro27SelectCountryViewController")
 @interface SelectCountryViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -1348,6 +1511,7 @@ SWIFT_CLASS("_TtC9ShuftiPro12TriangleView")
 @interface UIBarButtonItem (SWIFT_EXTENSION(ShuftiPro)) <AnchorView>
 @property (nonatomic, readonly, strong) UIView * _Nonnull plainView;
 @end
+
 
 
 
