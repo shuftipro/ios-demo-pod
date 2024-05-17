@@ -1128,6 +1128,7 @@ SWIFT_CLASS("_TtC9ShuftiPro26ProofPreviewViewController")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified zoomImageLabel;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (IBAction)contineuButtonClickAction:(id _Nonnull)sender;
 - (IBAction)retakeButtonClickAction:(id _Nonnull)sender;
