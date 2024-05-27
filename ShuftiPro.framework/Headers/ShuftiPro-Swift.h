@@ -353,6 +353,7 @@ SWIFT_CLASS("_TtC9ShuftiPro7CallApi")
 
 @class UIImageView;
 @class UIStackView;
+@class NSLayoutConstraint;
 @class NSString;
 @class NSBundle;
 
@@ -396,6 +397,12 @@ SWIFT_CLASS("_TtC9ShuftiPro31CameraInstructionViewController")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addressImage3;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addressImage4;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addressImage5;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified doctInstImage1;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified doctInstImage2;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified doctInstImage3;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified doctInstImage4;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified doctInstImage5;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified addressFirstLabelTopConstraint;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidDisappear:(BOOL)animated;
@@ -429,7 +436,6 @@ SWIFT_CLASS("_TtC9ShuftiPro15CustomCodeField")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSLayoutConstraint;
 @class UITapGestureRecognizer;
 @class UISwipeGestureRecognizer;
 
@@ -444,6 +450,15 @@ SWIFT_CLASS("_TtC9ShuftiPro12CustomSwitch")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)chnageSwitch:(UITapGestureRecognizer * _Nonnull)sender;
 - (void)handleGestureWithGesture:(UISwipeGestureRecognizer * _Nonnull)gesture;
+@end
+
+@class UIVisualEffect;
+
+SWIFT_CLASS("_TtC9ShuftiPro22CustomVisualEffectView")
+@interface CustomVisualEffectView : UIVisualEffectView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawRect:(CGRect)rect;
+- (nonnull instancetype)initWithEffect:(UIVisualEffect * _Nullable)effect SWIFT_UNAVAILABLE;
 @end
 
 
@@ -1535,6 +1550,8 @@ SWIFT_CLASS("_TtC9ShuftiPro12TriangleView")
 
 
 
+
+
 @interface UIView (SWIFT_EXTENSION(ShuftiPro)) <AnchorView>
 @property (nonatomic, readonly, strong) UIView * _Nonnull plainView;
 @end
@@ -1600,7 +1617,10 @@ SWIFT_CLASS("_TtC9ShuftiPro31UserConsentTakingViewController")
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified heightFortheHBTFLabel;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified widthConsentTextView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified mainViewHeight;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified backBlurrview;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified hbtfTopSpace;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified blurrImage;
+@property (nonatomic, weak) IBOutlet UIVisualEffectView * _Null_unspecified UIBlurrEffectView;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (IBAction)privacyPolicyClickAction:(id _Nonnull)sender;
