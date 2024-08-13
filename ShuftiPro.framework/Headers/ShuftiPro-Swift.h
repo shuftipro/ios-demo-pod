@@ -460,12 +460,16 @@ SWIFT_CLASS("_TtC9ShuftiPro22CustomVisualEffectView")
 - (nonnull instancetype)initWithEffect:(UIVisualEffect * _Nullable)effect SWIFT_UNAVAILABLE;
 @end
 
+@class NSNotification;
 
 SWIFT_CLASS("_TtC9ShuftiPro31DataLoadingScreenViewController")
 @interface DataLoadingScreenViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified loaderBackView;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)callBackwillTerminateWithNotification:(NSNotification * _Nonnull)notification;
+- (void)callBackForeGroundWithNotification:(NSNotification * _Nonnull)notification;
+- (void)callBackBackgroundWithNotification:(NSNotification * _Nonnull)notification;
 - (void)internetConnectedAgain;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)swipeRightGestureWithGesture:(UISwipeGestureRecognizer * _Nonnull)gesture;
@@ -846,7 +850,6 @@ SWIFT_AVAILABILITY(ios,introduced=13)
 - (void)timeChangeenvent;
 @end
 
-@class NSNotification;
 
 SWIFT_AVAILABILITY(ios,introduced=13)
 @interface NFCScanViewController (SWIFT_EXTENSION(ShuftiPro))
@@ -1393,7 +1396,7 @@ SWIFT_CLASS("_TtC9ShuftiPro26SelectCountryTableViewCell")
 @class UISearchBar;
 
 SWIFT_CLASS("_TtC9ShuftiPro27SelectCountryViewController")
-@interface SelectCountryViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface SelectCountryViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified countryTableView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified topInstructionLabel;
@@ -1404,6 +1407,7 @@ SWIFT_CLASS("_TtC9ShuftiPro27SelectCountryViewController")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified crossImage;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified crossImageWidth;
 - (void)viewDidLoad;
+- (void)keyboardWillShow:(NSNotification * _Nonnull)notification;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)internetConnectedAgain;
@@ -1417,6 +1421,7 @@ SWIFT_CLASS("_TtC9ShuftiPro27SelectCountryViewController")
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)searchBar:(UISearchBar * _Nonnull)searchBar textDidChange:(NSString * _Nonnull)searchText;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
@@ -1457,7 +1462,7 @@ SWIFT_CLASS("_TtC9ShuftiPro35SelectCountryWithCodeViewController")
 
 
 SWIFT_CLASS("_TtC9ShuftiPro34SelectLanguageScreenViewController")
-@interface SelectLanguageScreenViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface SelectLanguageScreenViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified languageTableView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified topInstructionLabel;
@@ -1465,8 +1470,10 @@ SWIFT_CLASS("_TtC9ShuftiPro34SelectLanguageScreenViewController")
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified tableViewBottomSpace;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified crossImage;
 - (void)viewDidLoad;
+- (void)keyboardWillShow:(NSNotification * _Nonnull)notification;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 - (void)topViewClick:(UITapGestureRecognizer * _Nullable)sender;
 - (void)crossImageClick:(UITapGestureRecognizer * _Nullable)sender;
 - (void)handleKeyboardWillHide:(NSNotification * _Nonnull)notification;
@@ -1867,6 +1874,9 @@ SWIFT_CLASS("_TtC9ShuftiPro31UserConsentTakingViewController")
 - (IBAction)contineuButtonClickAction:(id _Nonnull)sender;
 - (IBAction)cancelAction:(id _Nonnull)sender;
 - (void)callBackWithNotification:(NSNotification * _Nonnull)notification;
+- (void)callBackWillTerminateWithNotification:(NSNotification * _Nonnull)notification;
+- (void)callBackForgroudWithNotification:(NSNotification * _Nonnull)notification;
+- (void)callBackBackGroundWithNotification:(NSNotification * _Nonnull)notification;
 - (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
 - (void)handleTapOnTextView:(UITapGestureRecognizer * _Nonnull)sender;
 - (void)textViewDidChangeSelection:(UITextView * _Nonnull)textView;
@@ -1895,6 +1905,7 @@ SWIFT_CLASS("_TtC9ShuftiPro26UserFeedBackViewController")
 @property (nonatomic, weak) IBOutlet UIScrollView * _Null_unspecified scrollview;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified heightForTextView;
 - (void)viewDidLoad;
+- (void)keyboardWillShow:(NSNotification * _Nonnull)notification;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)keyboardDidShowWithNotification:(NSNotification * _Nonnull)notification;
