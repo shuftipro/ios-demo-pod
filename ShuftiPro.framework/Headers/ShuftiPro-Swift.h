@@ -1433,7 +1433,7 @@ SWIFT_CLASS("_TtC9ShuftiPro27SelectCountryViewController")
 
 
 SWIFT_CLASS("_TtC9ShuftiPro35SelectCountryWithCodeViewController")
-@interface SelectCountryWithCodeViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface SelectCountryWithCodeViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified countryTableView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified topInstructionLabel;
